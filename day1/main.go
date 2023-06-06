@@ -14,13 +14,14 @@ func main() {
 	}
 	scan := bufio.NewScanner(data)
 	lineSlice := []int{}
-	sum := []int{}
+	sum := []string{}
 	var highest int
 	for scan.Scan() {
-		line, _ := strconv.ParseInt(scan.Text(), 10, 64)
-		if line == 0 {
+		line := scan.Text()
+		if line == "" {
 			var total int
 			for _, item := range sum {
+				item, _ := strconv.Atoi(item)
 				total += item
 			}
 			if total > highest {
@@ -30,7 +31,7 @@ func main() {
 			sum = nil
 			continue
 		}
-		sum = append(sum, int(line))
+		sum = append(sum, (line))
 	}
 	var secondHighest, thirdHighest int
 	for _, item := range lineSlice {
@@ -44,6 +45,5 @@ func main() {
 		}
 	}
 
-	// fmt.Println(highest, secondHighest, thirdHighest)
 	fmt.Println(highest + secondHighest + thirdHighest)
 }
