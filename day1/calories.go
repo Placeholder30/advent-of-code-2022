@@ -8,11 +8,12 @@ import (
 )
 
 func main() {
-	data, err := os.Open("input.txt")
+	file, err := os.Open("input.txt")
 	if err != nil {
 		panic(err)
 	}
-	scan := bufio.NewScanner(data)
+	defer file.Close()
+	scan := bufio.NewScanner(file)
 	lineSlice := []int{}
 	sum := []string{}
 	var highest int
