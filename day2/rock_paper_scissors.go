@@ -54,8 +54,8 @@ func main() {
 	scan := bufio.NewScanner(file)
 	for scan.Scan() {
 		line := strings.Split(scan.Text(), " ")
-		elf = line[0]
-		you = line[1]
+		elf, you = line[0], line[1]
+
 		score := calculateGame(elf, you)
 		totalScore += score
 	}

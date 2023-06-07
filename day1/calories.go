@@ -30,7 +30,6 @@ func main() {
 			}
 			lineSlice = append(lineSlice, total)
 			sum = nil
-			continue
 		}
 		sum = append(sum, (line))
 	}
