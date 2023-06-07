@@ -40,5 +40,4 @@ func main() {
 
 	}
 	fmt.Println(sum)
-	fmt.Println("HELLO"[1])
 }
