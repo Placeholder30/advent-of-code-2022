@@ -18,7 +18,7 @@ func main() {
 	scan := bufio.NewScanner(file)
 	for scan.Scan() {
 		line := scan.Text()
-		seperator := int((len(line)) / 2)
+		seperator := (len(line)) / 2
 		firstCompartment, secondCompartment := line[:seperator], line[seperator:]
 		var match string
 		for i := 0; i < len(firstCompartment); i++ {
