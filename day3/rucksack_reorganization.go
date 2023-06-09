@@ -28,7 +28,6 @@ func main() {
 			}
 			for j := 0; j < len(secondCompartment); j++ {
 				if firstCompartment[i] == secondCompartment[j] {
-					fmt.Println(firstCompartment[i])
 					match = (string(firstCompartment[i]))
 					alphabetMap := AlphabetMap[match]
 					sum = sum + alphabetMap
